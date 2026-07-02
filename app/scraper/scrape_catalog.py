@@ -382,7 +382,6 @@ def scrape_shl_site():
     }
     target_urls = [
         "https://www.shl.com/en/assessments/cognitive-ability/",
-        "https://www.shl.com/en/assessments/personality-behavior/",
         "https://www.shl.com/en/assessments/"
     ]
     
