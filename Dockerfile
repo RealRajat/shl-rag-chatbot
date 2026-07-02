@@ -11,6 +11,7 @@ COPY requirements.txt .
 
 # Install dependencies into a wheels directory
 ENV PATH=/root/.local/bin:$PATH
+ENV PIP_ROOT_USER_ACTION=ignore
 RUN pip install --no-cache-dir --user -r requirements.txt
 
 # Stage 2: Final image
