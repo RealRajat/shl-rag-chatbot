@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 
 # Install dependencies into a wheels directory
+ENV PATH=/root/.local/bin:$PATH
 RUN pip install --no-cache-dir --user -r requirements.txt
 
 # Stage 2: Final image
