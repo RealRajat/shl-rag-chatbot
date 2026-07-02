@@ -1,5 +1,6 @@
 import logging
 from fastapi import APIRouter, Depends, HTTPException
+from fastapi.responses import RedirectResponse
 from app.models.schemas import ChatRequest, ChatResponse
 from app.services.chat_service import ChatService
 
@@ -9,6 +10,13 @@ router = APIRouter()
 # Dependency injection for chat service
 def get_chat_service() -> ChatService:
     return ChatService()
+
+@router.get("/")
+async def root():
+    """
+    Redirect root to API documentation.
+    """
+    return RedirectResponse(url="/docs")
 
 @router.get("/health")
 async def health():
