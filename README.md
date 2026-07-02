@@ -50,6 +50,9 @@ Create a `.env` file in the root directory:
 # Gemini API Key (Required)
 GEMINI_API_KEY=your_gemini_api_key_here
 
+# Hugging Face Token (Optional, suppresses unauthenticated warnings)
+HF_TOKEN=your_hf_token_here
+
 # Server settings (Optional)
 HOST=0.0.0.0
 PORT=8000
