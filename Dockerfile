@@ -45,12 +45,8 @@ COPY app/ ./app/
 COPY main.py .
 COPY README.md .
 
-# Create directory for catalog and pre-initialize database
-RUN mkdir -p catalog
-
-# Build catalog and FAISS index during container building or start
-# (Note: Building at startup is safer to read current env vars if required,
-# but we can pre-create folders)
+# Copy pre-built catalog to prevent memory spike on startup
+COPY catalog/ ./catalog/
 
 EXPOSE 8000
 
