@@ -32,6 +32,14 @@ COPY --from=builder /app /app
 ENV PATH=/root/.local/bin:$PATH
 ENV PYTHONUNBUFFERED=1
 
+# Memory optimization for 512MB environments (Render Free Tier)
+ENV MALLOC_ARENA_MAX=2
+ENV OMP_NUM_THREADS=1
+ENV MKL_NUM_THREADS=1
+ENV OPENBLAS_NUM_THREADS=1
+ENV VECLIB_MAXIMUM_THREADS=1
+ENV NUMEXPR_NUM_THREADS=1
+
 # Copy project files
 COPY app/ ./app/
 COPY main.py .
